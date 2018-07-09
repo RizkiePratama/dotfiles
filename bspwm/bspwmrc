@@ -1,0 +1,24 @@
+#! /bin/sh
+
+feh ~/.bg/wallhaven-625852.jpg  --bg-fill &
+polybar optibar &
+sxhkd &
+
+bspc monitor -d I II III IV V
+
+bspc config border_width         0
+bspc config window_gap           0
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a mpv state=floating
+bspc rule -a ncmpcpp2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+mpd &
+compton &
+
