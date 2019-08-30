@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	urxvt256c-ml
 
 # program launcher
 super + d
@@ -13,6 +13,10 @@ super + d
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# reload BSPWM config
+super + ctrl + r
+ ~/.config/bspwm/bspwmrc
 
 #
 # bspwm hotkeys
@@ -25,6 +29,10 @@ super + alt + Escape
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
+
+# Lockscreen
+super + l
+	lockscreen
 
 # alternate between the tiled and monocle layout
 super + m
@@ -133,3 +141,16 @@ XF86MonBrightnessUp
 
 XF86MonBrightnessDown
         light -U 5
+
+# Audio
+XF86AudioMute
+        amixer sset Master toggle
+
+XF86AudioMicMute
+        amixer sset Capture toggle
+
+XF86AudioRaiseVolume
+        amixer -D pulse sset Master 10%+
+
+XF86AudioLowerVolume
+        amixer -D pulse sset Master 10%-

@@ -34,9 +34,17 @@ URxvt.keysym.M-u: perl:url-select:select_next
 !URxvt.font: xft:Courier-10
 
 !Inconsolata
-URxvt.font: xft:Inconsolata-7
-URxvt.boldFont: xft:Inconsolata-8
-URxvt.letterSpace: -1
+!URxvt.font: xft:Inconsolata-7
+!URxvt.boldFont: xft:Inconsolata-8
+!URxvt.letterSpace: -1
+
+!Source Code Pro
+!URxvt*font: xft:Terminess Powerline:size=12
+URxvt*font: xft:Source Code Pro:size=8:antialias=true:hinting=true, xft:Symbola:style=Regular:pixelsize=8:hinting=true
+URxvt*boldFont: xft:Source Code Pro:size=8:antialias=true:hinting=true
+URxvt*italicFont: xft:Source Code Pro:style=Oblique:size=8:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Oblique:size=8:antialias=true:hinting=true
+URxvt*letterSpace: -1
 
 !Inconsolata-g
 !URxvt.font: xft:InconsolataG-10
@@ -67,9 +75,9 @@ URxvt.letterSpace: -1
 
 ! Tango theme
 URxvt.internalBorder:  22
-URxvt.background: #1C1C1C
-! URxvt.depth : 32
-! URxvt.background: rgba:0000/0000/0200/c800
+URxvt.background: [90]#1C1C1C
+URxvt.depth : 32
+!URxvt.background: rgba:0000/0000/0200/c800
 URxvt.foreground: #DEDEDE
 
 ! black

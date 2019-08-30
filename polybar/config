@@ -1,7 +1,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #E61C1C1C
+background-alt = #E6C1C1C1
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
@@ -14,14 +14,14 @@ alert = #bd2c40
 [bar/optibar]
 ;bottom = true
 width = 100%
-height = 25
+height = 30
 offset-x = 0%
 offset-y = 0%
 radius = 0
 fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 7
+line-size = 2
 line-color = #f00
 border-size = 0
 border-color = #00000000
@@ -30,12 +30,12 @@ padding-right = 15
 module-margin-left = 2
 module-margin-right = 2
 font-0 = San Francisco Display:bold:size=9
-font-1 = Ohruri:bold:size=9
-font-2 = Siji:size=9
+font-1 = 3270Narrow\ Nerd\ Font\ Mono:size=11:style=medium
+font-2 = Siji:size=65:pixelsize=55
 modules-left = bspwm xwindow
 modules-center =
-modules-right = mpd filesystem memory cpu wlan battery date
-;wm-restack = bspwm
+modules-right = mpd spotify wlan battery-combined date
+wm-restack = bspwm
 ;wm-restack = i3
 ;override-redirect = true
 ;scroll-up = bspwm-desknext
@@ -48,18 +48,18 @@ cursor-scroll = ns-resize
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 3
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 3
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 3
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 3
 
@@ -67,6 +67,7 @@ label-empty-padding = 3
 type = internal/xwindow
 label = %title:0:128:...%
 label-inactive = Windowchef
+format-underline = #8ae234
 
 [module/filesystem]
 type = internal/fs
@@ -74,6 +75,13 @@ interval = 25
 mount-0 = /
 label-mounted =  Root %percentage_used%%
 
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = ~/.git/polybar-spotify/spotify_status.py -t 50
+format-underline = #1db954
 
 [module/mpd]
 type = internal/mpd
@@ -100,33 +108,32 @@ label = Mem %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp4s0
 interval = 3.0
 
-format-connected = <ramp-signal> WLAN : <label-connected>
+format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-format-disconnected =
+format-disconnected = 
+format-connected-underline = #BD4545
 ;format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 =  
 ramp-signal-foreground = ${colors.foreground-alt}
 
 
 [module/date]
 type = internal/date
 interval = 5
-date =
+date = %Y-%m-%d%
 date-alt = " %A, %d %B %Y - "
 time = %I.%M %p
 time-alt = %I.%M %p
-format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-label = %date% %time%
+label =   %date%    %time%
+format-underline = #E6DADADA
 
 
 [module/battery]
@@ -138,16 +145,24 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 =  
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
+[module/battery-combined]
+type = custom/script
+exec = ~/.git/polybar-scripts/polybar-scripts/battery-combined-udev/battery-combined-udev.sh
+tail = true
 
 [module/windowchef-listen]
 type = custom/script
