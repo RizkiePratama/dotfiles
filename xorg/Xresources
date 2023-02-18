@@ -74,11 +74,25 @@ URxvt*letterSpace: -1
 !URxvt.font: xft:Terminus-10
 
 ! Tango theme
-URxvt.internalBorder:  22
-URxvt.background: [90]#1C1C1C
-URxvt.depth : 32
+!URxvt.internalBorder:  22
+!URxvt.background: [90]#1C1C1C
+!URxvt.depth : 32
 !URxvt.background: rgba:0000/0000/0200/c800
-URxvt.foreground: #DEDEDE
+!URxvt.foreground: #DEDEDE
+
+! Space Theme
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+XTerm*background: #2b2b2b
+XTerm*foreground: #e7e7e7
+XTerm*pointerColor: #16A085
+XTerm*faceName: Fixed
+XTerm*faceSize: 11
 
 ! black
 URxvt.color0  : #2E3436
@@ -122,7 +136,7 @@ XTerm*utf8Title: True
 XTerm*renderFont: True
 XTerm*preeditType: Root
 XTerm*xftAntialias: true
-XTerm*faceName: xft:Inconsolata-12
+!XTerm*faceName: xft:Inconsolata-12
 
 ! Trim trailing spaces
 XTerm*trimSelection: true
@@ -138,34 +152,3 @@ XTerm*translations: #override \
 
 ! Allow selecting email/url by double-click
 XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
-
-! Tango Theme
-
-XTerm*background: #1C1C1C
-XTerm*foreground: #DEDEDE
-
-! black
-XTerm*color0  : #2E3436
-XTerm*color8  : #555753
-! red
-XTerm*color1  : #CC0000
-XTerm*color9  : #EF2929
-! green
-XTerm*color2  : #4E9A06
-XTerm*color10 : #8AE234
-! yellow
-XTerm*color3  : #C4A000
-XTerm*color11 : #FCE94F
-! blue
-XTerm*color4  : #3465A4
-XTerm*color12 : #729FCF
-! magenta
-XTerm*color5  : #75507B
-XTerm*color13 : #AD7FA8
-! cyan
-XTerm*color6  : #06989A
-XTerm*color14 : #34E2E2
-! white
-XTerm*color7  : #D3D7CF
-XTerm*color15 : #EEEEEC
-
