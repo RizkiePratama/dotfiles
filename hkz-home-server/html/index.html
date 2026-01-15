@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なにも 知りません</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .animated-text {
+            /* Define the animation */
+            animation: fade-in-out 6s infinite;
+        }
+
+        @keyframes fade-in-out {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center h-full">
+    <div class="p-8 rounded-lg text-center">
+        <h1 class="text-white text-5xl sm:text-7xl font-bold animated-text">
+            なにも 知りません。
+        </h1>
+    </div>
+</body>
+</html>
+
